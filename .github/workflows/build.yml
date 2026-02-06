@@ -13,11 +13,9 @@ jobs:
         include:
           - os: ubuntu-latest
             artifact: StudyToday-Linux
-            binary_name: StudyToday
             asset_name: StudyToday-Linux
           - os: windows-latest
             artifact: StudyToday-Windows
-            binary_name: StudyToday.exe
             asset_name: StudyToday-Windows.exe
     runs-on: ${{ matrix.os }}
 
@@ -28,28 +26,29 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install C compiler (Linux)
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y gcc g++ patchelf
+
       - name: Install dependencies
-        run: pip install PySide6 pyinstaller
+        run: pip install PySide6 nuitka ordered-set zstandard
 
-      - name: Build executable
+      - name: Build with Nuitka
         run: >
-          pyinstaller
-          --name StudyToday
-          --windowed
+          python -m nuitka
+          --standalone
           --onefile
-          --add-data "src/qml:src/qml"
+          --enable-plugin=pyside6
+          --include-data-dir=src/qml=src/qml
+          --output-filename=${{ matrix.asset_name }}
+          --assume-yes-for-downloads
           main.py
-
-      - name: Rename binary for release
-        shell: bash
-        run: |
-          cp "dist/${{ matrix.binary_name }}" "dist/${{ matrix.asset_name }}"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact }}
-          path: dist/${{ matrix.asset_name }}
+          path: ${{ matrix.asset_name }}
 
   release:
     needs: build
