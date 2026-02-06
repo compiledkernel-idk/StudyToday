@@ -1,0 +1,25 @@
+module StudyToday
+
+singleton Theme 1.0 Theme.qml
+
+GlassPanel 1.0 components/GlassPanel.qml
+GlassButton 1.0 components/GlassButton.qml
+GlassInput 1.0 components/GlassInput.qml
+ProgressRing 1.0 components/ProgressRing.qml
+Sidebar 1.0 components/Sidebar.qml
+WindowControls 1.0 components/WindowControls.qml
+
+HuisPage 1.0 pages/HuisPage.qml
+VakkenPage 1.0 pages/VakkenPage.qml
+SubjectPage 1.0 pages/SubjectPage.qml
+TopicPage 1.0 pages/TopicPage.qml
+ZoekenPage 1.0 pages/ZoekenPage.qml
+FlashcardsPage 1.0 pages/FlashcardsPage.qml
+NotitiesPage 1.0 pages/NotitiesPage.qml
+TimerPage 1.0 pages/TimerPage.qml
+
+MeerkeuzeCard 1.0 study/MeerkeuzeCard.qml
+InvullenCard 1.0 study/InvullenCard.qml
+WaarOfNietCard 1.0 study/WaarOfNietCard.qml
+KoppelenCard 1.0 study/KoppelenCard.qml
+OpenCard 1.0 study/OpenCard.qml

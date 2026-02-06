@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+venv/
+.venv/
+build/
+dist/
+
+# Qt
+*.qmlc
+*.jsc
+
+# Old Tauri/React project (no longer used)
+src-tauri/
+node_modules/
+package.json
+package-lock.json
+index.html
+vite.config.ts
+tsconfig*.json
+eslint.config.js
+public/
+docs/
+boot.asm
+boot.bin
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+*.sw?
+
+# Misc
+*.log
+*.local
