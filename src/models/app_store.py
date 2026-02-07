@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 compiledkernel-idk
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 """
 app_store.py - Main state management QObject for the StudyToday Qt/QML app.
 

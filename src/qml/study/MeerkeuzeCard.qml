@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 compiledkernel-idk
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
